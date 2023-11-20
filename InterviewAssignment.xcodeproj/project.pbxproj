@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0E5924402B0B799D007D1FE9 /* InterviewAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E59243F2B0B799D007D1FE9 /* InterviewAssignmentApp.swift */; };
-		0E5924422B0B799D007D1FE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5924412B0B799D007D1FE9 /* ContentView.swift */; };
 		0E5924442B0B799F007D1FE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5924432B0B799F007D1FE9 /* Assets.xcassets */; };
 		0E5924472B0B799F007D1FE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5924462B0B799F007D1FE9 /* Preview Assets.xcassets */; };
+		0E59244E2B0B79DF007D1FE9 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E59244D2B0B79DF007D1FE9 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E59243C2B0B799D007D1FE9 /* InterviewAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E59243F2B0B799D007D1FE9 /* InterviewAssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAssignmentApp.swift; sourceTree = "<group>"; };
-		0E5924412B0B799D007D1FE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E5924432B0B799F007D1FE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E5924462B0B799F007D1FE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0E59244D2B0B79DF007D1FE9 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,8 @@
 		0E59243E2B0B799D007D1FE9 /* InterviewAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				0E59244D2B0B79DF007D1FE9 /* Home.swift */,
 				0E59243F2B0B799D007D1FE9 /* InterviewAssignmentApp.swift */,
-				0E5924412B0B799D007D1FE9 /* ContentView.swift */,
 				0E5924432B0B799F007D1FE9 /* Assets.xcassets */,
 				0E5924452B0B799F007D1FE9 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E5924422B0B799D007D1FE9 /* ContentView.swift in Sources */,
+				0E59244E2B0B79DF007D1FE9 /* Home.swift in Sources */,
 				0E5924402B0B799D007D1FE9 /* InterviewAssignmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
