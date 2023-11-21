@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllCourses: View {
-    let adaptiveColumn = [GridItem(.adaptive(minimum: 150))]
+    let adaptiveColumn = [GridItem(.adaptive(minimum: 150),alignment: .top)]
     @ObservedObject var allCoursesViewModel = AllCoursesViewModle()
     
     @State var searchText:String = ""
@@ -61,13 +61,6 @@ struct AllCourses: View {
     }
 }
 
-struct AllCourses_Previews: PreviewProvider {
-    static var previews: some View {
-        AllCourses()
-    }
-}
-
-
 struct BranchCard:View{
     var branch:Branch
     var body: some View {
@@ -90,5 +83,11 @@ struct BranchCard:View{
             .cornerRadius(12)
             .shadow(radius: 6)
             .padding()
+    }
+}
+
+struct AllCourses_Previews: PreviewProvider {
+    static var previews: some View {
+        AllCourses()
     }
 }
