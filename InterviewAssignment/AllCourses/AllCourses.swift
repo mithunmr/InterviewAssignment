@@ -15,7 +15,6 @@ struct AllCourses: View {
     var body: some View {
         ScrollView{
             ZStack(alignment: .top){
-                
                 Image("AllCourseBG")
                     .resizable()
                     .scaledToFit()
@@ -44,30 +43,21 @@ struct AllCourses: View {
                             onCommit: {
                                 allCoursesViewModel.filterBranches(seachText: searchText)
                             })
-                                
-                              
-                                
-                            
-                        }.padding()
+                        }.padding(10)
                     }.background(.white)
                         .cornerRadius(25)
                         .padding(.horizontal)
-                        .padding(.vertical,30)
-                    
-                   
-                  
-                       
+                        .padding(.vertical,5)
                     LazyVGrid(columns: adaptiveColumn, alignment: .leading,spacing: 5){
                         ForEach(allCoursesViewModel.showingBranches,id: \.id) { branch in
                             BranchCard(branch: branch)
-                        }.padding()
+                        }
                     }
-                  
-                }
+                }.padding(.top,75)
             }
         }.task {
             allCoursesViewModel.getAllCourses()
-        }
+        }.ignoresSafeArea()
     }
 }
 

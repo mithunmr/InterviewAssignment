@@ -17,14 +17,15 @@ enum Sections: CaseIterable {
 }
 
 struct Home: View {
-    var sections: [Sections] = Sections.allCases
-    
-    @ObservedObject var homeViewModel = HomeViewModel()
    
+    @ObservedObject var homeViewModel = HomeViewModel()
+    @State private var navPath = NavigationPath()
+    var sections: [Sections] = Sections.allCases
+    @State private var isShowingAllCases = false
     var body: some View {
         NavigationView {
             ScrollView {
-               
+                NavigationLink(destination: AllCourses(),isActive: $isShowingAllCases) {EmptyView()}
                 ForEach(sections,id: \.self){ section in
                     switch section {
                     case .header:
@@ -33,7 +34,9 @@ struct Home: View {
                         Resume()
                     case .exploreCourses:
                         ExploreCourses(courses: homeViewModel.exploreCourses?.courses ?? [],onSelctingCourse:{ course in
-                            print(course.name)
+                          isShowingAllCases = true
+                            
+                            
                            
                         })
                     case .featuredCourses:
@@ -43,6 +46,7 @@ struct Home: View {
             }.task {
                 homeViewModel.fetchData()
             }
+
         }
     }
 }
@@ -145,6 +149,7 @@ struct ExploreCourses: View {
                     CoursesCard(course: course)
                         .onTapGesture {
                             onSelctingCourse(course)
+                            
                            
                         }
                 }.padding()

@@ -8,13 +8,13 @@
 import Foundation
 
 
-struct ExploreCourse:Codable,Hashable {
+struct ExploreCourse:Codable {
     var id:Int
     var name:String
     var image:String
     var enrolled:Double
 }
-struct ExploreCourseModel:Codable,Hashable {
+struct ExploreCourseModel:Codable {
     var courses:[ExploreCourse]
 }
 
