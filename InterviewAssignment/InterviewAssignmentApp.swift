@@ -11,7 +11,8 @@ import SwiftUI
 struct InterviewAssignmentApp: App {
     var body: some Scene {
         WindowGroup {
-            Home()
+//            Home()
+            AllCourses()
         }
     }
 }

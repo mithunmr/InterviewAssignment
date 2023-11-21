@@ -1,0 +1,42 @@
+{
+
+  "courses": [
+    {
+      "id": 1,
+      "major": "ECE",
+      "name":"Network Theory",
+      "image":"FemaleLecture",
+      "discription":"ECE KTU 2019 scheme",
+      "price":299,
+    
+    },
+    {
+      "id": 2,
+      "major": "ECE",
+      "name":"Signal and systems",
+      "image":"MaleLecture",
+      "discription":"Study of Signal and systems",
+      "price":599,
+    
+    },
+    {
+      "id": 3,
+      "major": "ECE",
+      "name":"Digital Signal Process",
+      "image":"FemaleLecture",
+      "discription":"Study of Digital Signal Process",
+      "price":1999,
+    
+    },
+    {
+      "id": 4,
+      "major": "ECE",
+      "name":"Control System",
+      "image":"MaleLecture",
+      "discription":"Study of Control System",
+      "price":499,
+    
+    },
+   
+  ]
+}
