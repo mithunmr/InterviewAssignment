@@ -20,7 +20,7 @@ struct Home: View {
     var sections: [Sections] = Sections.allCases
     @State private var isShowingAllCases = false
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 NavigationLink(destination: AllCourses(),isActive: $isShowingAllCases) {EmptyView()}
                 ForEach(sections,id: \.self){ section in
@@ -34,7 +34,9 @@ struct Home: View {
                           isShowingAllCases = true
                         })
                     case .featuredCourses:
-                        FeaturedCourses(courses: homeViewModel.featuredCourses?.courses ?? [])
+                        FeaturedCourses( courses: homeViewModel.featuredCourses?.courses ?? [] , onSelctingCourse: {course in
+                            isShowingAllCases = true
+                        })
                     }
                 }
             }.task {
@@ -125,13 +127,14 @@ struct Resume: View {
 struct ExploreCourses: View {
     
     var courses:[ExploreCourse] = []
-    let adaptiveColumn = [GridItem(.adaptive(minimum: 150))]
+    let adaptiveColumn = [GridItem(.adaptive(minimum: 150),alignment: .top)]
     var onSelctingCourse:((_ course:ExploreCourse)->Void)
     
     var body: some View{
         Section {
-            LazyVGrid(columns: adaptiveColumn, alignment: .leading,spacing: 5){
+            LazyVGrid(columns: adaptiveColumn, alignment: .leading, spacing: 5){
                 ForEach(courses,id: \.id) { course in
+                    
                     CoursesCard(course: course)
                         .onTapGesture {
                             onSelctingCourse(course)
@@ -142,7 +145,6 @@ struct ExploreCourses: View {
     header: {
         HStack{
             Text("Explore Courses")
-            
                 .font(.system(size: 16,weight: .bold))
                 .padding(.vertical,2)
             Spacer()
@@ -178,13 +180,18 @@ struct CoursesCard:View{
 }
 
 struct FeaturedCourses:View {
-    let adaptiveColumn = [GridItem(.adaptive(minimum: 150))]
+    let adaptiveColumn = [GridItem(.adaptive(minimum: 150),alignment: .top)]
     var courses:[FeaturedCourse] = []
+    var onSelctingCourse:((_ course:FeaturedCourse)->Void)
     var body: some View{
         Section {
             LazyVGrid(columns: adaptiveColumn, alignment: .leading,spacing: 5){
                 ForEach(courses,id: \.id) { course in
+                    
                     FeaturedCourseCard(course: course)
+                        .onTapGesture {
+                            onSelctingCourse(course)
+                        }
                 }.padding()
             }
         }
