@@ -13,7 +13,6 @@ class HomeViewModel:ObservableObject{
     @Published var featuredCourses:FeaturedCourseModel?
     
     
-    
     func fetchData(){
         getExporeCourses()
         getFeaturedCourses()
@@ -29,6 +28,7 @@ class HomeViewModel:ObservableObject{
             }
         }
     }
+    
     func getFeaturedCourses(){
         jsonManager.fetch(type: FeaturedCourseModel.self, fileName: "FeaturedCourses", FileExtension: "json"){ result in
             switch result {

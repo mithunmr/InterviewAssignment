@@ -77,10 +77,8 @@ struct BranchCard:View{
                 Text("\(branch.short)")
                     .font(.system(size: 16,weight: .bold))
                     .foregroundColor(Color("DarkBlueText"))
-                
             }
             HStack(){
-             
                 Text("\(branch.name)")
                     .font(.system(size: 10,weight: .regular))
                     .foregroundColor(Color("LightBlueText"))

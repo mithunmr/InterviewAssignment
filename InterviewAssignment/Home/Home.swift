@@ -6,9 +6,6 @@
 //
 
 import SwiftUI
-
-
-
 enum Sections: CaseIterable {
     case header
     case resume
@@ -35,9 +32,6 @@ struct Home: View {
                     case .exploreCourses:
                         ExploreCourses(courses: homeViewModel.exploreCourses?.courses ?? [],onSelctingCourse:{ course in
                           isShowingAllCases = true
-                            
-                            
-                           
                         })
                     case .featuredCourses:
                         FeaturedCourses(courses: homeViewModel.featuredCourses?.courses ?? [])
@@ -46,17 +40,9 @@ struct Home: View {
             }.task {
                 homeViewModel.fetchData()
             }
-
         }
     }
 }
-
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
-
 
 
 
@@ -149,8 +135,6 @@ struct ExploreCourses: View {
                     CoursesCard(course: course)
                         .onTapGesture {
                             onSelctingCourse(course)
-                            
-                           
                         }
                 }.padding()
             }
@@ -240,5 +224,11 @@ struct FeaturedCourseCard:View {
                 .font(.system(size: 14,weight: .bold))
                 .padding(.bottom,2)
         }
+    }
+}
+
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
+        Home()
     }
 }
