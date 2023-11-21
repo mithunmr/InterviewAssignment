@@ -1,0 +1,34 @@
+{
+
+  "courses": [
+    {
+      "id": 1,
+      "name": "B.Tech",
+      "image": "btech",
+      "enrolled":5
+      
+    },
+    {
+      "id": 2,
+      "name": "GATE",
+      "image": "gate",
+      "enrolled":3.4,
+      
+    },
+    {
+      "id": 3,
+      "name": "ISRO",
+      "image": "isro",
+      "enrolled":4.5
+      
+    },
+    {
+      "id": 4,
+      "name": "UPSC",
+      "image": "upsc",
+      "enrolled":2.5
+      
+    },
+  
+  ]
+}
